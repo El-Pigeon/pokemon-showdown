@@ -5222,7 +5222,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (pokemon.species.id === 'sparklin') {
 					pokemon.formeChange('Sparklin-Amped');
 				}
-				return null;
+				else break;
 			}
 		},
 		isPermanent: true,

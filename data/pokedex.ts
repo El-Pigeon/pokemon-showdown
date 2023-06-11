@@ -19062,6 +19062,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	sparklinamped: {	
 		num: -100,
 		name: "Sparklin-Amped",
+	    forme: "Amped",
 		baseSpecies: "Sparklin",
 		types: ["Water", "Electric"],
 		baseStats: {hp: 100, atk: 150, def: 45, spa: 60, spd: 45, spe: 160},

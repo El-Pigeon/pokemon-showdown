@@ -5215,12 +5215,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: -4,
 	},
 	amped: {
-	        onTryHit(target, source, move) {
+	        onTryHit(target, source, move, pokemon) {
 			if (target !== source && move.type === 'Electric') {
 				if (pokemon.baseSpecies.baseSpecies !== 'Sparklin' || pokemon.transformed) return;
 				if (pokemon.species.id === 'sparklin') {
-					this.add('-immune', target, '[from] ability: Amped');	
-					this.pokemon.formeChange('Sparklin-Amped');	
+					pokemon.formeChange('Sparklin-Amped');	
 					}
 				return null;
 			}

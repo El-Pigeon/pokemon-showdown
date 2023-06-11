@@ -6126,6 +6126,20 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "CAP",
 		tier: "CAP",
 	},
+	//custom
+	amplet: {
+		isNonstandard: "CAP",
+		tier: "CAP",
+},
+sparklin: {
+		isNonstandard: "CAP",
+		tier: "CAP",
+},	
+sparklinamped: {
+		isNonstandard: "CAP",
+		tier: "CAP",
+},		
+    //end
 	pokestarsmeargle: {
 		isNonstandard: "Custom",
 		tier: "Illegal",

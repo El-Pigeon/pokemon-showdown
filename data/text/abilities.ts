@@ -2151,6 +2151,12 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	mountaineer: {
 		name: "Mountaineer",
 		shortDesc: "On switch-in, this Pokemon avoids all Rock-type attacks and Stealth Rock.",
+	},	
+    amped: {
+		name: "Amped",
+		shortDesc: "When being hit by an electric move, change to amped forme.",
+		
+		activate: "  [POKEMON] is amped!",
 	},
 	rebound: {
 		name: "Rebound",

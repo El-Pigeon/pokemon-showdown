@@ -5214,4 +5214,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: -4,
 	},
+	amped: {
+		name: "Amped",
+	        onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Electric') {
+				if (pokemon.baseSpecies.baseSpecies !== 'Sparklin' || pokemon.transformed) return;
+				if (pokemon.species.id === 'sparklin') {
+					pokemon.formeChange('Sparklin-Amped');
+				}
+				return null;
+			}
+		},
+		isPermanent: true,
+		rating: 3,
+		num: -5,
+	},
 };

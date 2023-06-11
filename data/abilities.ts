@@ -5219,7 +5219,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Sparklin' || attacker.transformed) return;
 			if (move.category === 'Status' && move.id !== 'charge') return;
-			const targetForme = (move.id === 'charge' ? 'Sparklin' : 'Sparklin-Amped');
+			const targetForme = (move.id === 'charge' ? 'Sparklin-Amped' : 'Sparklin');
 			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 	    name: "Amped",

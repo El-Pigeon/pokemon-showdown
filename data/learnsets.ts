@@ -94244,6 +94244,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 		sparklin: {
 		learnset: {
+			charge: ["9L1"],
 			bitterblade: ["9L1"],
 			boomburst: ["9L1"],
 			bulkup: ["9M"],

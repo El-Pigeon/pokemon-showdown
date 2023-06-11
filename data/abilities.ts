@@ -5215,14 +5215,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: -4,
 	},
 	amped: {
-	        onTryHit(target, source, move, pokemon) {
-			if (target !== source && move.type === 'Electric') {
-				if (pokemon.baseSpecies.baseSpecies !== 'Sparklin' || pokemon.transformed) return;
-				if (pokemon.species.id === 'sparklin') {
-					pokemon.formeChange('Sparklin-Amped');	
-					}
-				return null;
-			}
+		onModifyMovePriority: 1,
+		onModifyMove(move, attacker, defender) {
+			if (attacker.species.baseSpecies !== 'Sparklin' || attacker.transformed) return;
+			if (move.category === 'Status' && move.id !== 'charge') return;
+			const targetForme = (move.id === 'charge' ? 'Sparklin' : 'Sparklin-Amped');
+			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
 		},
 	    name: "Amped",
 		isPermanent: true,

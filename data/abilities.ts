@@ -5230,7 +5230,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-immune', target, '[from] ability: Amped');
 			}
 			return null;
-			}
+			},
 	    name: "Amped",
 		isPermanent: true,
 		rating: 3,

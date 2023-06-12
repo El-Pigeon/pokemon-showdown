@@ -5218,21 +5218,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyMovePriority: 1,
 		onModifyMove(move, attacker, defender) {
 			if (attacker.species.baseSpecies !== 'Sparklin' || attacker.transformed) return;
-			if (move.category === 'Status' && move.id !== 'charge') return;
-			const targetForme = (move.type === 'Electric' ? 'Sparklin-Amped' : 'Sparklin');
-			if (attacker.species.name !== targetForme) attacker.formeChange(targetForme);
+			if (move.id !== 'charge') return;
+			const targetForme = 'Sparklin-Amped';
+			if (attacker.species.name !== targetForme && move.type === 'Electric') attacker.formeChange(targetForme);
 		},
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Electric') {
 			if (target.species.baseSpecies !== 'Sparklin' || target.transformed) return;
-		    const targetForme = (move.type === 'Electric' ? 'Sparklin-Amped' : 'Sparklin');
+		    const targetForme = 'Sparklin-Amped';
 			if (target.species.name !== targetForme) target.formeChange(targetForme);
-			this.add('-immune', target, '[from] ability: Amped');
-			}
+			this.add('-immune', target, '[from] ability: Volt Absorb');
 			return null;
-			},
+			}
+		},
 	    name: "Amped",
-		isPermanent: true,
+		isBreakable: true, 
 		rating: 3,
 		num: -5,
 	},
